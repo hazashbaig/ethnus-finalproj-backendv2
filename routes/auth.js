@@ -30,7 +30,11 @@ router.post('/signin', async (req, res) => {
     if (!isPasswordValid) return res.status(401).json({ error: 'Invalid username or email or password' });
 
     const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY);
-    res.json({ token });
+    res.json({ 
+      token,
+      username: user.username,
+      email: user.email,
+     });
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
