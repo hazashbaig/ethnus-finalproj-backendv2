@@ -5,7 +5,6 @@ const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-// Get 10 random artworks (public)
 router.get('/random', async (req, res) => {
   try {
     const artworks = await Artwork.aggregate([{ $sample: { size: 10 } }]);
@@ -15,10 +14,8 @@ router.get('/random', async (req, res) => {
   }
 });
 
-// Middleware to authenticate the token
 router.use(authMiddleware);
 
-// Get user's artworks
 router.get('/my-artworks', async (req, res) => {
   try {
     const userId = req.userId;
@@ -29,7 +26,7 @@ router.get('/my-artworks', async (req, res) => {
   }
 });
 
-// Add new artwork
+
 router.post('/add', async (req, res) => {
   try {
     const { title, description, imageUrl } = req.body;
@@ -42,7 +39,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// Update artwork
+
 router.put('/update/:id', async (req, res) => {
   try {
     const { title, description, imageUrl } = req.body;
@@ -59,7 +56,7 @@ router.put('/update/:id', async (req, res) => {
   }
 });
 
-// Delete artwork
+
 router.delete('/delete/:id', async (req, res) => {
   try {
     const artworkId = req.params.id;
