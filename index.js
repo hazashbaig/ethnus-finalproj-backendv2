@@ -18,6 +18,10 @@ app.use(cors());
 app.use('/auth', authRoutes);
 app.use('/artworks', artworkRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
