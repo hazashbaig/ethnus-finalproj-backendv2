@@ -1,10 +1,10 @@
-const cloudinary = require('cloudinary').v2
+// const cloudinary = require('cloudinary').v2
           
-cloudinary.config({ 
-  cloud_name: 'dhpvl0j6x', 
-  api_key: '598236528545582', 
-  api_secret: 'rla8ak5LhCrZ7aGU6BLnPMJOfng' 
-});
+// cloudinary.config({ 
+//   cloud_name: 'dhpvl0j6x', 
+//   api_key: '598236528545582', 
+//   api_secret: 'rla8ak5LhCrZ7aGU6BLnPMJOfng' 
+// });
 
 // cloudinary.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg", {upload_preset: "my_preset"}, (error, result)=>{
 //   console.log(result, error);
